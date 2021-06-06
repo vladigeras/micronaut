@@ -1,0 +1,17 @@
+micronaut:
+  application:
+    name: micronaut
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/micronaut_db
+    username: micronaut_user
+    password: micronaut_password
+    schema-generate: CREATE_DROP
+    dialect: POSTGRES
+    driverClassName: org.postgresql.Driver
+jpa.default.properties.hibernate.hbm2ddl.auto: update

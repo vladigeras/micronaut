@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: ru.vladigeras
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ annotation-api, app-name, data, data-jpa, http-client, java, java-application, jax-rs, jdbc-hikari, junit, logback, maven, openapi, postgres, readme, shade, testcontainers, undertow-server, yaml ]
