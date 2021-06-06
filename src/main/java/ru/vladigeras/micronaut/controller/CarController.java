@@ -11,21 +11,16 @@ import io.micronaut.http.annotation.QueryValue;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import java.util.List;
-import javax.inject.Inject;
+import lombok.RequiredArgsConstructor;
 import ru.vladigeras.micronaut.model.dto.Car;
 import ru.vladigeras.micronaut.model.dto.CreateCarRequest;
 import ru.vladigeras.micronaut.service.CarService;
 
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @Controller("/api/v1/cars")
 public class CarController {
 
-	@Inject
 	private final CarService carService;
-
-	public CarController(CarService carService) {
-		this.carService = carService;
-	}
 
 	@Get
 	@Operation(summary = "Get cars")

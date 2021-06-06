@@ -3,29 +3,20 @@ package ru.vladigeras.micronaut.service.impl;
 import static java.util.Objects.nonNull;
 import static java.util.stream.Collectors.toList;
 import java.util.List;
-import javax.inject.Inject;
 import javax.inject.Singleton;
+import lombok.RequiredArgsConstructor;
 import ru.vladigeras.micronaut.mapper.CarMapper;
 import ru.vladigeras.micronaut.model.dto.Car;
 import ru.vladigeras.micronaut.model.dto.CreateCarRequest;
 import ru.vladigeras.micronaut.repository.CarRepository;
 import ru.vladigeras.micronaut.service.CarService;
 
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @Singleton
 public class CarServiceImpl implements CarService {
 
-	@Inject
 	private final CarRepository carRepository;
-
-	@Inject
 	private final CarMapper carMapper;
-
-	public CarServiceImpl(CarRepository carRepository,
-		CarMapper carMapper) {
-		this.carRepository = carRepository;
-		this.carMapper = carMapper;
-	}
 
 	@Override
 	public List<Car> get(String name) {
