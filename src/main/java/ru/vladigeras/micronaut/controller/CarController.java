@@ -30,13 +30,13 @@ public class CarController {
 
 	@Post
 	@Operation(summary = "Save car")
-	void save(@Body CreateCarRequest createCarRequest) {
+	public void save(@Body CreateCarRequest createCarRequest) {
 		carService.save(createCarRequest);
 	}
 
 	@Delete("/{id}")
 	@Operation(summary = "Delete car")
-	void delete(@PathVariable(name = "id") String id) {
+	public void delete(@PathVariable(name = "id") String id) {
 		carService.delete(id);
 	}
 }
